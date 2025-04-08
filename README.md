@@ -1,4 +1,4 @@
-# Py-Crafts
+<h1 align="center">Py-Crafts </h1>
 
 Welcome to **Py-Crafts** — a private vault of all my Python code, experiments, and tools.  
 This repository is where I store and manage everything from learning scripts to automation tools, games, AI experiments, and utility scripts.
