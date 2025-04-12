@@ -1,7 +1,7 @@
 # Extract images from a PDF file using PyMuPDF (fitz)
 # This script extracts all images from a given PDF file and saves them to a specified directory.
 # Requirements: PyMuPDF (install with `pip install PyMuPDF`) 
-
+"""
 import fitz  # PyMuPDF
 import os
 
@@ -55,7 +55,7 @@ def extract_and_render_images(pdf_path, output_dir="images"):
 
 # Run the function
 extract_and_render_images("Example.pdf", "images")
-
+"""
 
 """
 os.path.abspath(__file__): Gets the full path of the current script.
