@@ -1,1 +1,1 @@
-print(f.readline())
+pyfiglet "Hello CLI"
