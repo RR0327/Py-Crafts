@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Color Tool - RGB ↔ HEX</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="mb-4 text-center text-primary">🎨 RGB ↔ HEX ↔ NAME Converter</h1>
+
+        <form method="post" class="card p-4 shadow-sm">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Enter Color Name</label>
+                <input type="text" name="color_name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Enter HEX (e.g. #FF0000)</label>
+                <input type="text" name="hex_code" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Enter RGB (comma separated)</label>
+                <input type="text" name="rgb_code" class="form-control" placeholder="e.g. 255,0,0">
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">Convert</button>
+                {% if results %}
+                <a href="{% url 'download_json' %}" class="btn btn-success">⬇️ Download JSON</a>
+                <a href="{% url 'download_txt' %}" class="btn btn-secondary">⬇️ Download TXT</a>
+                {% endif %}
+            </div>
+        </form>
+
+        {% if results %}
+        <div class="mt-5">
+            <h4>🧾 Results:</h4>
+            <pre class="bg-white border p-3">{{ results }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
