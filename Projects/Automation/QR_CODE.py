@@ -11,7 +11,7 @@ imp.show()
 
 
 """
-# Chatgpt version
+# Modified version
 import pyqrcode
 from PIL import Image
 
