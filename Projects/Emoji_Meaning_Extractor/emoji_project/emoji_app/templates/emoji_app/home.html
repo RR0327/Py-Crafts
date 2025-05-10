@@ -1,0 +1,39 @@
+{% load static %}
+{% load dict_filters %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EmojiPower — Home</title>
+    <link rel="stylesheet" href="{% static 'emoji_app/styles.css' %}">
+</head>
+
+<body>
+    <div class="background" style="background-image: url('{% static background %}');"></div>
+    {% include 'emoji_app/navbar.html' %}
+    <main class="container">
+        <h1>Emoji Meaning Extractor</h1>
+        <form method="post">{% csrf_token %}
+            <input type="text" name="emoji_input" placeholder="Enter emojis..." value="{{ text }}">
+            <button type="submit">Analyze</button>
+        </form>
+        {% if tip %}<div class="tip-box">💡 Tip: {{ tip }}</div>{% endif %}
+        {% if meanings %}
+        <div class="results">
+            <h2>Results</h2>
+            <div class="cards">
+                {% for emoji, meaning in meanings.items %}
+                <div class="card">
+                    <div class="emoji">{{ emoji }}</div>
+                    <div class="category">{{ categories|dict_get:emoji }}</div>
+                    <div class="meaning">{{ meaning }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </main>
+</body>
+
+</html>

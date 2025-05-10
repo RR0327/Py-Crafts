@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EmojiPower — About</title>
+    <link rel="stylesheet" href="{% static 'emoji_app/styles.css' %}">
+</head>
+
+<body>
+    <div class="background" style="background-image: url('{% static background %}');"></div>
+    {% include 'emoji_app/navbar.html' %}
+    <main class="container">
+        <h2>About EmojiPower</h2>
+        <p>
+            EmojiPower is a fun and educational tool built using Django.
+            It helps users understand emoji meanings, track their emoji usage history, and discover popular emojis — all
+            without JavaScript.
+        </p>
+    </main>
+</body>
+
+</html>

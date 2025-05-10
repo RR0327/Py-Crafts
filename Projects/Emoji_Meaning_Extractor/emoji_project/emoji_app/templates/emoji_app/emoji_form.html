@@ -1,0 +1,98 @@
+{% load static %}
+{% load dict_filters %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Emoji Meaning Extractor</title>
+    <link rel="stylesheet" href="{% static 'emoji_app/styles.css' %}">
+</head>
+
+<body>
+    <div class="background home-bg"></div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-logo"><a href="#home">EmojiPower</a></div>
+        <nav class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="#history">History</a>
+            <a href="#top">Top Emojis</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main id="home" class="container">
+        <h1>Emoji Meaning Extractor</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="emoji_input" placeholder="Enter emojis..." value="{{ text }}">
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if tip %}
+        <div class="tip-box">💡 Tip: {{ tip }}</div>
+        {% endif %}
+
+        {% if meanings %}
+        <div class="results">
+            <h2>Results</h2>
+            <div class="cards">
+                {% for emoji, meaning in meanings.items %}
+                <div class="card">
+                    <div class="emoji">{{ emoji }}</div>
+                    <div class="category">{{ categories|dict_get:emoji }}</div>
+                    <div class="meaning">{{ meaning }}</div>
+                </div>
+                {% endfor %}
+            </div>
+            <form action="{% url 'download_results' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="emoji_text" value="{{ text }}">
+                <button class="download-btn" type="submit">Download as Text</button>
+            </form>
+        </div>
+        {% endif %}
+
+        {% if history %}
+        <div id="history" class="history">
+            <h2>Emoji Input History</h2>
+            <div class="history-line">
+                {% for h in history %}
+                {{ h }}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if top_emojis %}
+        <div id="top" class="top-emojis">
+            <h2>Top 5 Most Used Emojis</h2>
+            <ul>
+                {% for emoji, count in top_emojis %}
+                <li>{{ emoji }} — used {{ count }} times</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div id="about" class="about">
+            <h2>About EmojiPower</h2>
+            <p>
+                EmojiPower is a simple and fun tool to discover the meaning of emojis. It is built using Python,
+                Django, and pure HTML/CSS—no JavaScript required. It tracks your history, offers tips, and shows emoji
+                usage trends.
+            </p>
+        </div>
+
+        <!-- Back to top button -->
+        <div class="back-to-top">
+            <a href="#home">⬆ Back to Top</a>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EmojiPower — History</title>
+    <link rel="stylesheet" href="{% static 'emoji_app/styles.css' %}">
+</head>
+
+<body>
+    <div class="background" style="background-image: url('{% static background %}');"></div>
+    {% include 'emoji_app/navbar.html' %}
+    <main class="container">
+        <h2>Emoji Input History</h2>
+        <div class="history-line">
+            {% for h in history %} {{ h }} {% endfor %}
+        </div>
+    </main>
+</body>
+
+</html>
