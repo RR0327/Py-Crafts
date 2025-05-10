@@ -49,7 +49,7 @@ Each route has its **own background image**, unique layout, and clean styling.
 
 ---
 
-## 📦 Project Structure
+## 📁 Project Structure
 
 Emoji_Meaning_Extractor/
 ├── emoji_app/
@@ -79,7 +79,6 @@ Emoji_Meaning_Extractor/
 ├── .gitignore
 ├── manage.py
 ├── README.md
-
 ---
 
 ## 🧪 Local Development Setup
