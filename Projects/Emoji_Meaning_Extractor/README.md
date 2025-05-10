@@ -50,73 +50,44 @@ Each route has its **own background image**, unique layout, and clean styling.
 ---
 
 ## 📁 Project Structure
-
+```
 Emoji_Meaning_Extractor/
 ├── emoji_app/
 │   ├── views.py
-│   ├── urls.py
+│   └── urls.py
 │
-├── templates/emoji_app/
-│   ├── home.html
-│   ├── history.html
-│   ├── top.html
-│   ├── about.html
-│   ├── navbar.html
+├── templates/
+│   └── emoji_app/
+│       ├── home.html
+│       ├── history.html
+│       ├── top.html
+│       ├── about.html
+│       └── navbar.html
 │
-├── static/emoji_app/
-│   ├── bg-home.jpg
-│   ├── bg-other.jpg
-│   ├── styles.css
+├── static/
+│   └── emoji_app/
+│       ├── bg-home.jpg
+│       ├── bg-other.jpg
+│       └── styles.css
 │
 ├── templatetags/
 │   └── dict_filters.py
 │
 ├── emoji_project/
 │   ├── settings.py
-│   ├── urls.py
+│   └── urls.py
 │
+├── manage.py
 ├── requirements.txt
 ├── .gitignore
-├── manage.py
-├── README.md
----
-
-📁 Project Structure
-
-Emoji_Meaning_Extractor/
-├── emoji_app/
-│   ├── views.py
-│   ├── urls.py
-│
-├── templates/emoji_app/
-│   ├── home.html
-│   ├── history.html
-│   ├── top.html
-│   ├── about.html
-│   ├── navbar.html
-│
-├── static/emoji_app/
-│   ├── bg-home.jpg
-│   ├── bg-other.jpg
-│   ├── styles.css
-│
-├── templatetags/
-│   └── dict_filters.py
-│
-├── emoji_project/
-│   ├── settings.py
-│   ├── urls.py
-│
-├── requirements.txt
-├── .gitignore
-├── manage.py
-├── README.md
+└── README.md
+```
 
 ## 🧪 Local Development Setup
 
 ```
 # Clone the repository
-git clone https://github.com/RR0327/emoji-power.git
+git clone https://github.com/RR0327/Py-Crafts.git
 cd emoji-power
 ```
 
@@ -143,24 +114,30 @@ python manage.py collectstatic
 ```
 # • WhiteNoise will serve static files from /staticfiles/ in production.
 
-🌍 Deployment Ready
+- Deployment Ready
 
-The project is prepared for deployment with:
+• The project is prepared for deployment with:
 
-✅ WhiteNoise middleware
+- WhiteNoise middleware
 
-✅ STATIC_ROOT and STATICFILES_STORAGE settings
+- STATIC_ROOT and STATICFILES_STORAGE settings
 
-✅ .gitignore and requirements.txt ready
+- .gitignore and requirements.txt ready
 
-Easily deployable to platforms like Render, Heroku, or PythonAnywhere.
+• Easily deployable to platforms like Render, Heroku, or PythonAnywhere.
 
-🙌 Credits
+# Credits
 
-Built with using Django by Md Rakibul Hassan
+Built with using Django by ***Md Rakibul Hassan***
+
+CSE Undergraduate | Backend Developer | Robotics & IoT Enthusiast
+
+🔗 [LinkedIn](https://www.linkedin.com/in/md-rakibul-hassan-507b00308)
+
+🐙 [GitHub](https://github.com/RR0327)
 
 Designed to help users better understand the emoji language.
 
-📄 License
+# License
 
 This project is open source and available under the MIT License.
