@@ -1,4 +1,7 @@
-![Project Banner](bg-home.jpg)
+<!-- Full-width high-quality image -->
+<p align="center">
+  <img src="bg-home.jpg" alt="Banner" width="100%" style="max-width:100%; height:auto;" />
+</p>
 
 # <h1 align="center">😎 EmojiPower — Emoji Meaning Extractor</h1>
 
