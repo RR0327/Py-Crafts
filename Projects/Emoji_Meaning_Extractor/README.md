@@ -1,7 +1,7 @@
-<h1 align="center">![Project Banner](bg-home.jpg)</h1>
+![Project Banner](bg-home.jpg)
 
 # <h1 align="center">😎 EmojiPower — Emoji Meaning Extractor</h1>
-=====================================
+
 **EmojiPower** is a fun, lightweight Django web application that helps users understand the meanings of emojis.  
 It includes features like emoji meaning extraction, usage tracking, history logging, top-used emojis display, and downloadable results — all built with **pure Django, HTML, and CSS** (no JavaScript!).
 
