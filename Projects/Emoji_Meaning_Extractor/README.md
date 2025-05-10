@@ -76,8 +76,6 @@ Emoji_Meaning_Extractor/
 ├── .gitignore
 ├── README.md
 └── manage.py
-
-
 ---
 
 ## 🧪 Local Development Setup
