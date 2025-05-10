@@ -1,4 +1,4 @@
-![Project Banner](bg-home.jpg)
+<h1 align="center">![Project Banner](bg-home.jpg)</h1>
 
 # <h1 align="center">😎 EmojiPower — Emoji Meaning Extractor</h1>
 =====================================
