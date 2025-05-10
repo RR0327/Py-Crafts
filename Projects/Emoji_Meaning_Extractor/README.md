@@ -52,30 +52,34 @@ Each route has its **own background image**, unique layout, and clean styling.
 ## 📦 Project Structure
 
 Emoji_Meaning_Extractor/
-│
 ├── emoji_app/
-│ ├── views.py
-│ ├── urls.py
-│ ├── templates/emoji_app/
-│ │ ├── home.html
-│ │ ├── history.html
-│ │ ├── top.html
-│ │ ├── about.html
-│ │ └── navbar.html
-│ ├── static/emoji_app/
-│ │ ├── bg-home.jpg
-│ │ ├── bg-other.jpg
-│ │ └── styles.css
-│ └── templatetags/dict_filters.py
+│   ├── views.py
+│   ├── urls.py
+│
+├── templates/emoji_app/
+│   ├── home.html
+│   ├── history.html
+│   ├── top.html
+│   ├── about.html
+│   ├── navbar.html
+│
+├── static/emoji_app/
+│   ├── bg-home.jpg
+│   ├── bg-other.jpg
+│   ├── styles.css
+│
+├── templatetags/
+│   └── dict_filters.py
 │
 ├── emoji_project/
-│ ├── settings.py
-│ ├── urls.py
+│   ├── settings.py
+│   ├── urls.py
 │
 ├── requirements.txt
 ├── .gitignore
+├── manage.py
 ├── README.md
-└── manage.py
+
 ---
 
 ## 🧪 Local Development Setup
