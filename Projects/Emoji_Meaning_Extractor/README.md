@@ -12,16 +12,16 @@ It includes features like emoji meaning extraction, usage tracking, history logg
 
 ## ✨ Key Features
 
-- ✅ Extract emoji meanings using `demoji`
-- ✅ Track emoji input history via Django sessions
-- ✅ Display Top 5 most-used emojis
-- ✅ Categorize emojis (e.g., ❤️ → Love, 😂 → Laugh)
-- ✅ Random helpful emoji usage tips
-- ✅ Download emoji analysis as `.txt`
-- ✅ Different background images per page
-- ✅ Fully responsive professional UI
-- ✅ Pure Django + HTML + CSS (no JS!)
-- ✅ Static file support via WhiteNoise for production
+- Extract emoji meanings using `demoji`
+- Track emoji input history via Django sessions
+- Display Top 5 most-used emojis
+- Categorize emojis (e.g., ❤️ → Love, 😂 → Laugh)
+- Random helpful emoji usage tips
+- Download emoji analysis as `.txt`
+- Different background images per page
+- Fully responsive professional UI
+- Pure Django + HTML + CSS (no JS!)
+- Static file support via WhiteNoise for production
 
 ---
 
