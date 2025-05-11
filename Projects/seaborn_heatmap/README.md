@@ -114,7 +114,7 @@ CSE Undergraduate | Backend Developer | Robotics & IoT Enthusiast
 
 🐙 [GitHub](https://github.com/RR0327)
 
-Designed to help users better understand the emoji language.
+Designed to help users visualize complex data through customizable heatmaps and track real-time weather conditions interactively. 
 
 # License
 
