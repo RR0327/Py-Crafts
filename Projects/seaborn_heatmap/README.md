@@ -27,9 +27,7 @@ This is a Django web application that allows users to generate customized heatma
 
 ---
 
-## Getting Started
-
-### Installation
+## Getting Started Installation
 
 # Clone the repository:
 ```
