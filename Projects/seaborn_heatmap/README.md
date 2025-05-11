@@ -2,9 +2,7 @@
   <img src="weather.jpg" alt="Banner" width="50%" style="max-width:100%; height:auto;" />
 </p>
 
-## <h1 align="center">ShopNow Ecommerce</h1>
-
-# Heatmap Generator with Live Weather Tracker 🌦
+## <h1 align="center">Heatmap Generator with Live Weather Tracker</h1>
 
 This is a Django web application that allows users to generate customized heatmaps using Seaborn and NumPy, upload CSV files for heatmap visualization, and track current weather using real-time web scraping from [timeanddate.com](https://www.timeanddate.com/).
 
@@ -49,10 +47,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 Apply migrations:
-
-bash
-Copy
-Edit
+```
 python manage.py migrate
 Run the development server:
 ```
@@ -78,19 +73,19 @@ seaborn_heatmap/
 ```
 # Dependencies
 
-Django
+- Django
 
-numpy
+- numpy
 
-matplotlib
+- matplotlib
 
-seaborn
+- seaborn
 
-pandas
+- pandas
 
-requests
+- requests
 
-beautifulsoup4
+- beautifulsoup4
 
 # Install them with:
 ```
@@ -98,15 +93,15 @@ pip install -r requirements.txt
 ```
 # Future Improvements
 
-AJAX live heatmap preview
+- AJAX live heatmap preview
 
-PDF and ZIP export
+- PDF and ZIP export
 
-User authentication + saved dashboards
+- User authentication + saved dashboards
 
-Dark/light theme toggle
+- Dark/light theme toggle
 
-Smart weather auto-suggestions
+- Smart weather auto-suggestions
 
 # Credits
 
