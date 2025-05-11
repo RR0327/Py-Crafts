@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Heatmap Generator</title>
+</head>
+
+<body>
+    <h1>Create Your Custom Heatmap</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if image_filename %}
+    <h2>Heatmap Preview</h2>
+    <img src="/static/{{ image_filename }}" alt="Heatmap" width="600">
+    <a href="/static/{{ image_filename }}" download>Download PNG</a>
+    {% endif %}
+
+    {% if csv_data %}
+    <h3>Uploaded CSV Data:</h3>
+    <table border="1">
+        {% for row in csv_data.values %}
+        <tr>
+            {% for item in row %}
+            <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <h3><a href="{% url 'weather' %}">Check Weather</a></h3>
+</body>
+
+</html>

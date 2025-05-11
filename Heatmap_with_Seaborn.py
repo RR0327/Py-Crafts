@@ -44,9 +44,9 @@ This code generates a heatmap using the Seaborn library in Python.
 """
 
 """
-What is a Heatmap (with Seaborn)?
-A heatmap is a 2D visualization that uses color to represent values in a matrix, allowing for quick identification of patterns, variations, and anomalies.
-This leverages the brain's faster processing of color compared to numerical data.
+• What is a Heatmap (with Seaborn)?
+    - A heatmap is a 2D visualization that uses color to represent values in a matrix, allowing for quick identification of patterns, variations, and anomalies.
+    - This leverages the brain's faster processing of color compared to numerical data.
 
 • Seaborn's Heatmap in Simple Terms:
     • Seaborn's heatmap() is a powerful and beautiful tool to:
@@ -66,4 +66,3 @@ Seaborn	        Python library that makes heatmaps easy, beautiful, and customiz
 Why Use It?	    Helps spot trends, clusters, highs/lows, and outliers at a glance
 Data Format	    Requires a 2D array (NumPy or Pandas DataFrame)
 """
-

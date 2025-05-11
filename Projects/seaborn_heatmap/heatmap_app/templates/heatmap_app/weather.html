@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Checker</title>
+</head>
+
+<body>
+    <h1>Find Current Weather</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Check</button>
+    </form>
+
+    {% if weather %}
+    {% if weather.error %}
+    <p style="color:red">{{ weather.error }}</p>
+    {% else %}
+    <h2>Weather in {{ weather.city }}, {{ weather.country }}</h2>
+    <p>Temperature: {{ weather.temperature }}</p>
+    <p>Description: {{ weather.description }}</p>
+    {% endif %}
+    {% endif %}
+
+    <h3><a href="{% url 'heatmap' %}">Back to Heatmap</a></h3>
+</body>
+
+</html>
