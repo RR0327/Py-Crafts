@@ -31,25 +31,26 @@ This is a Django web application that allows users to generate customized heatma
 
 ### Installation
 
-1. Clone the repository:
+# Clone the repository:
 ```
 git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
 ```
 
-Create and activate a virtual environment:
+# Create and activate a virtual environment:
 ```
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
-Install dependencies:
+# Install dependencies:
 ```
 pip install -r requirements.txt
 ```
-Apply migrations:
+# Apply migrations:
 ```
 python manage.py migrate
-Run the development server:
+```
+# Run the development server:
 ```
 python manage.py runserver
 ```
