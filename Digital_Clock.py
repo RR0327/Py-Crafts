@@ -39,4 +39,59 @@ root.mainloop()"""
 
 
 
+"""
+import time
+from time import strftime
+import os
 
+try:
+    while True:
+        # Get current time and date
+        current_time = strftime("%I:%M:%S %p")       # 12-hour format
+        current_date = strftime("%A, %B %d, %Y")     # e.g., Thursday, May 15, 2025
+
+        # Clear screen (Windows: 'cls', Linux/macOS: 'clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
+
+        # Display time and date
+        print(f"⏰  {current_time}")
+        print(f"📅  {current_date}")
+
+        # Wait for 1 second
+        time.sleep(1)
+except KeyboardInterrupt:
+    print("\nClock stopped.")
+"""
+
+
+import time
+import os
+from datetime import timedelta
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def countdown_timer(days=0, hours=0, minutes=0, seconds=0):
+    total_seconds = int(timedelta(days=days, hours=hours, minutes=minutes, seconds=seconds).total_seconds())
+
+    try:
+        while total_seconds:
+            # Convert total seconds back to days/hours/mins/secs
+            time_left = str(timedelta(seconds=total_seconds))
+
+            # Clear screen and show countdown
+            clear_screen()
+            print(f"⏳  Time Remaining: {time_left}")
+
+            # Wait 1 second and decrement
+            time.sleep(1)
+            total_seconds -= 1
+
+        # Time's up
+        clear_screen()
+        print("🚨 Time's up!")
+    except KeyboardInterrupt:
+        print("\n⛔ Countdown stopped.")
+
+# 👇 Example: 5-day countdown
+countdown_timer(days=5)
