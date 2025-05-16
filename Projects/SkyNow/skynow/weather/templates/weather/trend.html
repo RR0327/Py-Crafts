@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SkyNow - Temperature Trend</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f0f8ff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        img {
+            border: 2px solid #ccc;
+            padding: 10px;
+            background: white;
+            max-width: 100%;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0077cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📈 Temperature Trend (Last 10 Entries)</h1>
+
+    {% if chart %}
+    <img src="data:image/png;base64,{{ chart }}" alt="Temperature Trend Chart">
+    {% else %}
+    <p>No trend data available.</p>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'home' %}">🔙 Back to Home</a>
+
+</body>
+
+</html>

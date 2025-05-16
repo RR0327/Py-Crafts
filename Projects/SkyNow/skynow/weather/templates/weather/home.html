@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SkyNow - Global Weather</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #e6f2ff;
+        }
+
+        h1 {
+            color: #003366;
+        }
+
+        .weather-box {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+        }
+
+        a {
+            color: #0033cc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🌍 SkyNow - Global Weather Checker</h1>
+
+    <form method="post" class="weather-box">
+        {% csrf_token %}
+        <label>Enter Country:</label>
+        <input type="text" name="country" placeholder="e.g., usa, uk, bangladesh" required>
+        <label>Enter City:</label>
+        <input type="text" name="city" placeholder="e.g., new york, london, dhaka" required>
+        <button type="submit">Check Weather</button>
+    </form>
+
+    {% if weather %}
+    <div class="weather-box" style="margin-top: 20px;">
+        <h2>Weather in {{ city }}, {{ country }}</h2>
+        <p><strong>Temperature:</strong> {{ weather.temperature }}</p>
+        <p><strong>Condition:</strong> {{ weather.condition }}</p>
+        <p><strong>Sunrise:</strong> {{ weather.sunrise }}</p>
+        <p><strong>Sunset:</strong> {{ weather.sunset }}</p>
+        <p><a href="{{ weather.url }}" target="_blank">View Full Source</a></p>
+    </div>
+    {% elif error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    {% if recent_searches %}
+    <div class="weather-box" style="margin-top: 20px;">
+        <h3>Recent Searches:</h3>
+        <ul>
+            {% for item in recent_searches %}
+            <li>{{ item.city|title }}, {{ item.country|title }} — {{ item.searched_at|date:"M d, H:i" }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <div class="weather-box" style="margin-top: 20px;">
+        <h3>Data Export:</h3>
+        <p>
+            <a href="{% url 'export_json' %}" target="_blank">📄 Download as JSON</a><br>
+            <a href="{% url 'export_txt' %}" target="_blank">📝 Download as TXT</a><br>
+            <a href="{% url 'trend' %}">📊 View Temperature Trend</a>
+        </p>
+    </div>
+
+</body>
+
+</html>
