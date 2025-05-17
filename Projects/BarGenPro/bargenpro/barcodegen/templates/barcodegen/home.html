@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BarGenPro - Barcode Generator</title>
+    <link rel="stylesheet" href="{% static 'barcodegen/theme.css' %}">
+</head>
+
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+
+    <h1>🧾 BarGenPro</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Product Name:</label><br>
+        <input type="text" name="name" required><br>
+
+        <label>Description:</label><br>
+        <textarea name="description" rows="3"></textarea><br>
+
+        <label>Price:</label><br>
+        <input type="number" name="price" step="0.01" required><br>
+
+        <label>Select Barcode Type:</label><br>
+        <select name="code_type" required>
+            <option value="upc">UPC (11 digits)</option>
+            <option value="ean13">EAN13 (12 digits)</option>
+            <option value="isbn13">ISBN13 (12 digits)</option>
+            <option value="code128">Code128</option>
+            <option value="code39">Code39</option>
+            <option value="issn">ISSN (7 digits)</option>
+            <option value="jan">JAN (12 digits)</option>
+            <option value="pzn">PZN (6 digits)</option>
+            <option value="ean8">EAN8 (7 digits)</option>
+            <option value="isbn10">ISBN10 (9 digits)</option>
+        </select><br>
+
+        <label>Enter Code:</label><br>
+        <input type="text" name="code_value" required><br><br>
+
+        <button type="submit">Generate & Save</button>
+    </form>
+
+    {% if success %}
+    <h3>✅ Barcode Generated:</h3>
+    <img src="{{ barcode_image.url }}" alt="Barcode Image">
+    {% elif error %}
+    <p style="color:red;">⚠️ Error: {{ error }}</p>
+    {% endif %}
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const current = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            body.classList.remove(current + '-mode');
+            body.classList.add(next + '-mode');
+            localStorage.setItem('theme', next);
+        }
+        window.onload = () => {
+            const saved = localStorage.getItem('theme') || 'light';
+            document.body.classList.add(saved + '-mode');
+        };
+    </script>
+</body>
+
+</html>

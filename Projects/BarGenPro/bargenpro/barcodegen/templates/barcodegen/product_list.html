@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product List - BarGenPro</title>
+    <link rel="stylesheet" href="{% static 'barcodegen/theme.css' %}">
+</head>
+
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+
+    <h1>📦 Product List</h1>
+
+    <form method="get">
+        <input type="text" name="q" placeholder="Search products..." value="{{ query }}">
+        <button type="submit">🔍 Search</button>
+        <a href="/products/">Reset</a>
+    </form>
+
+    <a href="/">← Back</a> |
+    <a href="{% url 'upload_csv' %}">📤 Upload CSV</a> |
+    <a href="{% url 'export_products_csv' %}">📄 Export CSV</a> |
+    <a href="{% url 'export_products_pdf' %}">📄 Export PDF</a><br><br>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Code</th>
+            <th>Price</th>
+            <th>Barcode</th>
+        </tr>
+        {% for p in products %}
+        <tr>
+            <td>{{ p.name }}</td>
+            <td>{{ p.code_type }}</td>
+            <td>{{ p.code_value }}</td>
+            <td>${{ p.price }}</td>
+            <td>
+                <img src="{{ p.barcode_image.url }}" width="150"><br>
+                <a href="{% url 'download_png' p.pk %}">⬇️ PNG</a> |
+                <a href="{% url 'download_pdf' p.pk %}">📄 PDF</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const current = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            body.classList.remove(current + '-mode');
+            body.classList.add(next + '-mode');
+            localStorage.setItem('theme', next);
+        }
+        window.onload = () => {
+            const saved = localStorage.getItem('theme') || 'light';
+            document.body.classList.add(saved + '-mode');
+        };
+    </script>
+</body>
+
+</html>

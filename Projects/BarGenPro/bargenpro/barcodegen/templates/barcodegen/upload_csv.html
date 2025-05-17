@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Upload CSV - BarGenPro</title>
+    <link rel="stylesheet" href="{% static 'barcodegen/theme.css' %}">
+</head>
+
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+
+    <h1>📤 Upload Product CSV</h1>
+    <a href="/">← Back to Generator</a> | <a href="/products/">📦 View Products</a><br><br>
+
+    {% if success %}
+    <p style="color:green;">✅ {{ success }}</p>
+    {% elif error %}
+    <p style="color:red;">❌ {{ error }}</p>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Select CSV File:</label><br>
+        <input type="file" name="csv_file" required><br><br>
+        <button type="submit">Upload & Generate</button>
+    </form>
+
+    <h3>📋 CSV Format (Headers Required):</h3>
+    <pre>
+name,description,price,code_type,code_value
+Book A,Science Book,99.99,ean13,590123412345
+Water Bottle,Reusable,15.00,upc,12345678901
+Notebook,Stationery,8.50,code128,ABC123456
+    </pre>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const current = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            body.classList.remove(current + '-mode');
+            body.classList.add(next + '-mode');
+            localStorage.setItem('theme', next);
+        }
+        window.onload = () => {
+            const saved = localStorage.getItem('theme') || 'light';
+            document.body.classList.add(saved + '-mode');
+        };
+    </script>
+</body>
+
+</html>
