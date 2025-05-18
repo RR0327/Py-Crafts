@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Project-work.png" width="300" alt="BarGenPro Logo">
+  <img src="Project-work.png" width="700" alt="Py-Crafts Logo">
 </p>
 
 <h1 align="center">Py-Crafts </h1>
