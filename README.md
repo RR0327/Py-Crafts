@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Project-work.png" width="300" alt="BarGenPro Logo">
+</p>
+
 <h1 align="center">Py-Crafts </h1>
 
 Welcome to **Py-Crafts** — a private vault of all my Python code, experiments, and tools.  
