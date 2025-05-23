@@ -119,3 +119,7 @@ db.sqlite3
 #qr_code
 qr_codes/
 /qr_codes/
+
+# Ignore all .docx and .pdf files
+*.docx
+*.pdf

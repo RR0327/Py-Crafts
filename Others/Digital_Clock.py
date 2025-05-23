@@ -38,8 +38,8 @@ tk.Label(root, text="Tkinter is working!").pack()
 root.mainloop()"""
 
 
+# Date and Time
 
-"""
 import time
 from time import strftime
 import os
@@ -61,8 +61,8 @@ try:
         time.sleep(1)
 except KeyboardInterrupt:
     print("\nClock stopped.")
-"""
 
+# CountDown
 
 import time
 import os
