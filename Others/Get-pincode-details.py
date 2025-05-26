@@ -80,3 +80,34 @@ Shows full address & coordinates	    ✅
 Clean error handling	                ✅
 User-friendly interface             	✅
 """
+# Explanation
+"""
+🔍 **Purpose:**
+
+It looks up the geographic location (address + coordinates) of a given ZIP or PIN code within a specified country using the geopy library and OpenStreetMap's Nominatim API.
+
+🧱 Code Summary:
+
+* Nominatim(user_agent=...): Initializes the geocoder.
+* input(...): Prompts the user to enter a postal code and a country.
+* geolocator.geocode(...): Searches for that location using OpenStreetMap.
+* If found:
+
+  * Prints the full address, latitude, and longitude.
+* If not:
+
+  * Prints a "not found" message.
+* Wrapped in a while loop so the user can do multiple lookups.
+
+🧪 Example:
+
+Enter ZIP code or PIN code: 90210
+Enter country name: USA
+
+Outputs:
+
+📍 Location Details for '90210' in 'USA':
+Address: Beverly Hills, Los Angeles, California, USA
+Latitude: 34.0901
+Longitude: -118.4065
+"""
