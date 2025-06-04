@@ -123,3 +123,10 @@ qr_codes/
 # Ignore all .docx and .pdf files
 *.docx
 *.pdf
+
+# Ignore the captchas output folder
+captchas/
+
+# Ignore all audio files
+*.mp3
+*.wav
