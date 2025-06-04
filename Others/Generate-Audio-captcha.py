@@ -1,4 +1,14 @@
 # CAPTCHA = Completely Automated Public Turing test to tell Computers and Humans Apart.
+"""
+CAPTCHAs are automated tests designed to distinguish between human users and bots.
+They present challenges that are easy for humans to solve but difficult for computers,
+    ensuring that only legitimate users can access certain online resources.
+
+CAPTCHA stands for the Completely Automated Public Turing test to tell Computers and Humans Apart.
+These tools help differentiate real users from automated ones by providing challenges
+    that are difficult for computers but relatively easy for humans.
+"""
+
 # Raw work
 """
 import random
@@ -40,3 +50,4 @@ print("Audio CAPTCHA saved as 'AudioCaptcha_gtts.mp3'")
 # Note: Ensure you have the gTTS library installed. You can install it using pip:
 # pip install gTTS
 # gTTS (Google Text-to-Speech), a Python library and CLI tool to interface with Google Translate's text-to-speech API.
+
