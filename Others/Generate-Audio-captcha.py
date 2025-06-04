@@ -28,6 +28,8 @@ print("Audio CAPTCHA saved as 'AudioCaptcha.wav'")
 """
 # This code generates a random audio CAPTCHA consisting of digits and saves it as an audio file.
 
+# Using gTTs for better clarity and compatibility
+
 import random
 from gtts import gTTS
 
