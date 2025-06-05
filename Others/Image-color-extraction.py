@@ -234,3 +234,28 @@ where:
 • B is the blue component
 It prioritizes green, then red, then blue, based on human vision.
 """
+
+# Explanation
+
+"""
+✅ Short & Effective Explanation of the Code
+
+This Python script extracts the Top 10 dominant colors from an image and exports the results in multiple formats.
+
+🔧 How It Works:
+• 1. Load the image using PIL, convert it to a NumPy array.
+• 2. Flatten the pixels into a 2D array for clustering.
+• 3. Apply KMeans to find the most common colors.
+• 4. Compute brightness and optionally sort the colors by brightness.
+• 5. Output formats:
+
+• colors.txt — RGB + HEX values in plain text.
+• colors.json — structured data for further use.
+• palette.html — visual color blocks in HTML.
+• palette.png — a horizontal color bar image.
+
+✅ Use Cases:
+• Color palette extraction from photos or graphics.
+• Design, art, and branding projects.
+• Visual data analysis.
+"""
