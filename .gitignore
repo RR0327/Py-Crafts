@@ -130,3 +130,9 @@ captchas/
 # Ignore all audio files
 *.mp3
 *.wav
+
+
+# Ignore all image files
+*.jpg
+*.jpeg
+*.png
