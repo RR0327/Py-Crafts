@@ -136,3 +136,6 @@ captchas/
 *.jpg
 *.jpeg
 *.png
+
+# Ignore all text files
+*.txt
